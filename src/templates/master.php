@@ -5,7 +5,7 @@ include __DIR__ . "/../config.php";
 <!-- Headline -->
 <div class="row">
   <div class="col-xs-12 col-sm-1">
-    <button class="btn btn-lg btn-danger wipe" ng-click="master.wipe()">Wipe</button>
+    <button class="btn btn-lg btn-danger wipe" ng-click="master.wipe()">Apagar</button>
   </div>
   <div class="col-xs-10 col-sm-8 col-md-10">
     <h1>{{ master.id }} - {{ master.name }}</h1>
@@ -55,64 +55,27 @@ include __DIR__ . "/../config.php";
 <!-- Invite and statistics -->            
 <div class="row">
   <div class="hidden-xs hidden-sm col-md-5">
-    <h2>Invite members</h2>
-    <p>Invite members to join your session. Session id: <strong ng-bind="master.id"></strong></p>
+    <h2>Convidar membros</h2>
+    <p>Convide membros para participar de sua sessão. Identificação de sessão: <strong ng-bind="master.id"></strong></p>
 <?php
 $joinUrl = $host . "/join/";
 ?>
-    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?= urlencode($joinUrl) . "{{ master.joinFragment }}" ?>&choe=UTF-8" title="Join {{ master.id }}" />
+    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?= urlencode($joinUrl) . "{{ master.joinFragment }}" ?>&choe=UTF-8" title="Entrar {{ master.id }}" />
 <?php
 $joinUrl = $joinUrl . "{{ master.joinFragment }}";
 ?>
-    <p>Or send them this link: <a href="<?= $joinUrl ?>"><?= $joinUrl ?></a>
+    <p>Ou envie a eles este link: <a href="<?= $joinUrl ?>"><?= $joinUrl ?></a>
   </div>
 
   <!-- Team list and complete button -->
   <div class="col-xs-12 col-md-5" ng-if="!master.teamComplete">
-    <h2>Team</h2>
+    <h2>Equipe</h2>
     <ul class="list-group">
       <!-- Iterate over votes as they represent members as well -->
       <li class="list-group-item" ng-repeat="member in master.votes track by member.id">{{$index + 1}}. {{member.name}}</li>
     </ul>
-    <button class="btn btn-success" ng-click="master.teamComplete = true">Team complete</button>
+    <button class="btn btn-success" ng-click="master.teamComplete = true">Equipe concluída</button>
   </div>   
     
-  <!-- Statistics column -->
-  <div class="col-xs-12 col-md-7" ng-if="master.teamComplete">
-    <div class="panel panel-default">
-      <div class="panel-heading">Statistics</div>
-      <div class="panel-body">
-        <p ng-hide="master.statistics">Statistics will appear as soon as the first poll is concluded!</p>
-        <table class="table table-striped" ng-show="master.statistics">
-          <thead>
-            <tr>
-              <th>Enabled</th>
-              <th>Name</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="statistic in master.statistics | orderBy:'!enabled'">
-              <td><input type="checkbox" ng-model="statistic.enabled"></td>
-              <td>
-                <a target="_blank" href="<?php echo $src ?>/src/controllers/statistics/{{statistic.name}}.php">
-                  {{ statistic.name }}
-                </a>
-              </td>
-              <td><span ng-show="statistic.enabled" ng-bind="statistic.value"></span></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
-                <a target="_blank" href="<?php echo $src ?>/src/controllers/statistics">
-                  Want more?
-                </a>
-              </td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+  
 </div>

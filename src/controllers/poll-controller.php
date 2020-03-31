@@ -41,7 +41,7 @@ class PollController extends ControllerBase
 
     // Reject votes if poll is completed
     if($currentPoll == null || $currentPoll->getResult() > 0)
-      throw new Exception("Can not modify non-existing or completed poll!");
+      throw new Exception("Não é possível modificar a pesquisa não existente ou concluída!");
 
     $method = $_SERVER['REQUEST_METHOD'];
     if ($method == "POST")

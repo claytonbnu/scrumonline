@@ -11,13 +11,7 @@ var scrum = {
       topic: '',
       description: '',
       view: 'default_source.html'
-    },
-    { 
-      name: '+', 
-      position: 99, 
-      view: 'add_source.html', 
-      feedback: false 
-    },
+    }
   ],
 
   // At peak times the number of polling clients exceeds the servers capacity.
@@ -343,7 +337,7 @@ scrum.app.controller('MasterController', function ($http, $routeParams, $locatio
 
   // Wipe the session and redirect
   this.wipe = function () {
-    var confirmed = confirm("Do you want to delete the session and wipe all associated data?");
+    var confirmed = confirm("Deseja excluir a sessão e limpar todos os dados associados?");
     if (!confirmed)
       return;
       
