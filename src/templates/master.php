@@ -18,11 +18,11 @@ include __DIR__ . "/../config.php";
 <!-- Poll control -->
 <div class="row topic">
   <div class="col-xs-12">
-    <ul class="nav nav-tabs">
+<!--    <ul class="nav nav-tabs">
       <li ng-class="{active: master.current == source}" ng-repeat="source in master.sources| orderBy: 'position'">
         <a class="selectable" ng-click="master.selectSource(source)">{{ source.name }}</a>
       </li>
-    </ul>
+    </ul>-->
     <div class="ticketing" ng-include="master.current.view">
     </div>
   </div>
