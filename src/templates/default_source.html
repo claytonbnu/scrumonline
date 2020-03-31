@@ -1,11 +1,11 @@
 <form role="form" class="form-inline storysetter">
   <div class="form-group">
-    <label for="topic">Story:</label>
-    <input type="text" class="form-control" ng-model="master.current.topic" placeholder="#4711 Create foo">
+    <label for="topic">Estória:</label>
+    <input type="text" class="form-control" ng-model="master.current.topic" placeholder="#4711 Titulo da Estória">
   </div>
   <div class="form-group">
-    <label for="description">Description:</label>
-    <input type="text" class="form-control" ng-model="master.current.description" placeholder="The user can create an awesome foo">
+    <label for="description">Descrição:</label>
+    <input type="text" class="form-control" ng-model="master.current.description" placeholder="Descrição da Estória">
   </div>
-  <button class="btn btn-default" ng-click="master.startPoll(master.current.topic, master.current.description)">Start</button>
+  <button class="btn btn-default" ng-click="master.startPoll(master.current.topic, master.current.description)">Iniciar</button>
 </form>

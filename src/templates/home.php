@@ -13,7 +13,7 @@ include "config.php";
           <div class="form-group" ng-class="{'has-error': create.nameError}">
             <label for="sessionName">Nome da sessão:</label>
             <div class="has-feedback">
-              <input type="text" class="form-control" ng-model="create.name" placeholder="My session">
+              <input type="text" class="form-control" ng-model="create.name" placeholder="Minha sessão">
               <span ng-if="create.nameError" class="glyphicon glyphicon-remove form-control-feedback"></span>
             </div>
           </div>

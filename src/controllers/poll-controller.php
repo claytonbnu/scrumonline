@@ -210,7 +210,7 @@ class PollController extends ControllerBase
     $result->timestamp = $session->getLastAction()->getTimestamp();
     if ($currentPoll == null)
     {
-        $result->topic = "No topic";
+        $result->topic = "Sem descrição";
         $result->description = "";
         $result->url = "";
         $result->votable = false;
