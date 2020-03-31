@@ -52,7 +52,7 @@ foreach($templates as $index=>$template)
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    	<a class="navbar-brand" href="/">Scrum Poker</a>
+    	<a class="navbar-brand" href="/">Ellevo Scrum Poker</a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
