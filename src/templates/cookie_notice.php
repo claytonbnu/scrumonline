@@ -13,7 +13,16 @@ window.cookieconsent.initialise({
     }
   },
   "content": {
-    "href": "<?= $src ?>doc/Cookies.md"
+    "header": 'Cookies used on the website!',
+    "message": 'This website uses cookies to improve your experience.',
+    "dismiss": 'Got it!',
+    "allow": 'Allow cookies',
+    "deny": 'Decline',
+    "link": 'Learn more',
+    "href": 'https://www.cookiesandyou.com',
+    "close": '&#x274c;',
+    "policy": 'Cookie Policy',
+    "target": '_blank'
   }
 })});
 </script>
